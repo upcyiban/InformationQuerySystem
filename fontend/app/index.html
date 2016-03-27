@@ -1,58 +1,113 @@
 <!doctype html>
 <html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="石大易班 石大易查询">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>石大易查询</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="石大易班 石大易查询">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>石大易查询</title>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
 
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/semantic/dist/semantic.css">
-    <!-- endbower -->
-    <!-- endbuild -->
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="../bower_components/semantic/dist/semantic.css">
+  <link rel="stylesheet" href="../bower_components/semantic/dist/components/sidebar.css">
+  <link rel="stylesheet" href="../bower_components/semantic/dist/components/segment.css">
+  <!-- endbower -->
+  <!-- endbuild -->
 
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
 
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">你正在使用一个<strong>过时的</strong>浏览器. 请前往 <a href="http://browsehappy.com/">这里以升级你的浏览器</a>获取更好的浏览体验.</p>
-    <![endif]-->
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+<body class="pushable" style="position: static;">
+<!--[if lt IE 10]>
+<p class="browserupgrade">你正在使用一个<strong>过时的</strong>浏览器. 请前往 <a href="http://browsehappy.com/">这里以升级你的浏览器</a>获取更好的浏览体验.
+</p>
+<![endif]-->
+
+<!--Following Menu-->
+<div class="ui large top fixed menu transition hidden">
+  <div class="ui container">
+    <a class="item">空教室</a>
+    <a class="item">查成绩</a>
+    <a class="item">查课表</a>
+  </div>
+</div>
+
+<!--Sidebar Menu-->
+<nav class="ui vertical inverted sidebar menu top">
+  <a class="item">空教室</a>
+  <a class="item">查成绩</a>
+  <a class="item">查课表</a>
+</nav>
+
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <div class="left item">
+          <a class="toc header item">
+            石大易查询
+          </a>
+          <a class="header item">石大易查询</a>
+        </div>
+        <div class="right item">
+          <a class="toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <a class="item active">空教室</a>
+          <a class="item">查成绩</a>
+          <a class="item">查课表</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui text container">
+      <h1 class="ui inverted header">空教室查询</h1>
+      <h3>官方接口,更准更快.优化显示,更易查看.</h3>
+    </div>
 
 
-    
+  </div>
 
 
+</div>
 
-    <!-- Baidu Analytics -->
-    <script>
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?89b34d07100df92ccaaa6a3195d738f4";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
+<!--footer-->
+<footer class="ui inverted vertical footer segment">
+  <i class=" inverted copyright icon"></i>中国石油大学(华东)易班发展中心 2016<br/>
+  <p>powered by <a href="http://www.lihuanyu.com">skyADMIN</a></p>
+</footer>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/semantic/dist/semantic.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+<!-- Baidu Analytics -->
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?89b34d07100df92ccaaa6a3195d738f4";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
-  </body>
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/semantic/dist/semantic.js"></script>
+<script src="../bower_components/semantic/dist/components/sidebar.js"></script>
+<script src="../bower_components/semantic/dist/components/transition.js"></script>
+<script src="../bower_components/semantic/dist/components/visibility.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+</body>
 </html>
