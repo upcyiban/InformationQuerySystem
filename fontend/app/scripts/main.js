@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  'use strict';
   $('.masthead')
     .visibility({
       once: false,

@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" xmlns="http://www.w3.org/1/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <meta name="description" content="石大易班 石大易查询">
@@ -34,7 +35,7 @@
 <!--Following Menu-->
 <div class="ui large top fixed menu transition hidden">
   <div class="ui container">
-    <a class="item">空教室</a>
+    <a class="item">自习室</a>
     <a class="item">查成绩</a>
     <a class="item">查课表</a>
   </div>
@@ -42,7 +43,7 @@
 
 <!--Sidebar Menu-->
 <nav class="ui vertical inverted sidebar menu top">
-  <a class="item">空教室</a>
+  <a class="item">自习室</a>
   <a class="item">查成绩</a>
   <a class="item">查课表</a>
 </nav>
@@ -61,7 +62,7 @@
           <a class="toc item">
             <i class="sidebar icon"></i>
           </a>
-          <a class="item active">空教室</a>
+          <a class="item active">自习室</a>
           <a class="item">查成绩</a>
           <a class="item">查课表</a>
         </div>
@@ -69,13 +70,46 @@
     </div>
 
     <div class="ui text container">
-      <h1 class="ui inverted header">空教室查询</h1>
+      <h1 class="ui inverted header">自习室查询</h1>
       <h3>官方接口,更准更快.优化显示,更易查看.</h3>
     </div>
 
-
   </div>
 
+  <div class="ui text container">
+    <div class="ui segments" style="margin-top: 1em;margin-bottom: 1em">
+      <div class="ui segment">
+        <h1>南教自习室</h1>
+        <div class="ui divider"></div>
+        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.njLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+      </div>
+      <div class="ui red segment">
+        <h1>南堂自习室</h1>
+        <div class="ui divider"></div>
+        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.njLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+      </div>
+      <div class="ui blue segment">
+        <h1>东环自习室</h1>
+        <div class="ui divider"></div>
+        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.njLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+      </div>
+      <div class="ui yellow segment">
+        <h1>西环自习室</h1>
+        <div class="ui divider"></div>
+        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.njLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+      </div>
+      <div class="ui green segment">
+        <h1>东廊自习室</h1>
+        <div class="ui divider"></div>
+        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.njLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+      </div>
+      <div class="ui pink segment">
+        <h1>西廊自习室</h1>
+        <div class="ui divider"></div>
+        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.njLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+      </div>
+    </div>
+  </div>
 
 </div>
 
