@@ -24,6 +24,10 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
 		<!--调用webservice要的依赖-->
 		<dependency>
 			<groupId>org.apache.axis</groupId>
