@@ -71,3 +71,5 @@ crashlytics-build.properties
 # Created by .ignore support plugin (hsz.mobi)
 target
 ProductConfig.java
+src/main/resources/static
+src/main/resources/templates
