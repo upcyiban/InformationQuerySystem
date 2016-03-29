@@ -71,43 +71,90 @@
     </div>
 
     <div class="ui text container">
-      <h1 class="ui inverted header">自习室查询</h1>
+      <h2 class="ui inverted header">自习室查询</h2>
       <h3>官方接口,更准更快.优化显示,更易查看.</h3>
     </div>
 
   </div>
 
+  <div class="ui text center aligned container" style="margin-top: 1em">
+    <div class="ui segment">
+      <form class="ui form">
+        <div class="inline three fields">
+          <div class="field">
+            <label>周数</label>
+            <select class="ui selection dropdown">
+              <option>请选择</option>
+              <option>第一周</option>
+              <option>第二周</option>
+              <option>第三周</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>星期</label>
+            <select class="ui selection dropdown">
+              <option>请选择</option>
+              <option>第一周</option>
+              <option>第二周</option>
+              <option>第三周</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>周数</label>
+            <select class="ui selection dropdown">
+              <option>请选择</option>
+              <option>第一周</option>
+              <option>第二周</option>
+              <option>第三周</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="ui text center aligned container" style="margin-top: 1em">
+    <h1 th:text="${title}">当前可自习的教室有</h1>
+  </div>
+
   <div class="ui text container">
+
     <div class="ui segments" style="margin-top: 1em;margin-bottom: 1em">
       <div class="ui segment">
-        <h1>南教自习室</h1>
+        <h2>南教自习室</h2>
         <div class="ui divider"></div>
-        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.njLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+        <p style="font-size: 22px" th:text="${#strings.replace(classmessage.njLists,',','，')}">
+          105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
       </div>
       <div class="ui red segment">
-        <h1>南堂自习室</h1>
+        <h2>南堂自习室</h2>
         <div class="ui divider"></div>
-        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.ntLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+        <p style="font-size: 22px" th:text="${#strings.replace(classmessage.ntLists,',','，')}">
+          105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
       </div>
       <div class="ui blue segment">
-        <h1>东环自习室</h1>
+        <h2>东环自习室</h2>
         <div class="ui divider"></div>
-        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.dhLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+        <p style="font-size: 22px" th:text="${#strings.replace(classmessage.dhLists,',','，')}">
+          105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
       </div>
       <div class="ui yellow segment">
-        <h1>西环自习室</h1>
+        <h2>西环自习室</h2>
         <div class="ui divider"></div>
-        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.xhLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+        <p style="font-size: 22px" th:text="${#strings.replace(classmessage.xhLists,',','，')}">
+          105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
       </div>
       <div class="ui green segment">
-        <h1>东廊自习室</h1>
+        <h2>东廊自习室</h2>
         <div class="ui divider"></div>
-        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.dlLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+        <p style="font-size: 22px" th:text="${#strings.replace(classmessage.dlLists,',','，')}">
+          105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
       </div>
       <div class="ui pink segment">
-        <h1>西廊自习室</h1>
+        <h2>西廊自习室</h2>
         <div class="ui divider"></div>
-        <p style="font-size: 25px" th:text="${#strings.replace(classmessage.xlLists,',','，')}">105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
+        <p style="font-size: 22px" th:text="${#strings.replace(classmessage.xlLists,',','，')}">
+          105，218，219，300，302，303，304，312，313，315，316，317，318，319，401</p>
       </div>
     </div>
   </div>
@@ -117,7 +164,7 @@
 <!--footer-->
 <footer class="ui inverted vertical footer segment">
   <i class=" inverted copyright icon"></i>中国石油大学(华东)易班发展中心 2016<br/>
-  <p>powered by <a href="http://www.lihuanyu.com">skyADMIN</a></p>
+  <p>powered by <a href="http://www.lihuanyu.com">skyADMIN</a> & 网络中心</p>
 </footer>
 
 <!-- Baidu Analytics -->

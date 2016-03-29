@@ -1,5 +1,10 @@
 $(document).ready(function () {
   'use strict';
+
+  $('select.dropdown')
+    .dropdown()
+  ;
+
   $('.masthead')
     .visibility({
       once: false,
