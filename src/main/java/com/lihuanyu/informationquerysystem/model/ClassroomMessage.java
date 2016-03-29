@@ -6,6 +6,7 @@ package com.lihuanyu.informationquerysystem.model;
  */
 public class ClassroomMessage {
     public boolean allNull;
+    public String currentTime;
     public String njLists;
     public String ntLists;
     public String dhLists;
