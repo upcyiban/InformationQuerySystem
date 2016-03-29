@@ -79,42 +79,73 @@
 
   <div class="ui text center aligned container" style="margin-top: 1em">
     <div class="ui segment">
-      <form class="ui form">
+      <form class="ui form" action="available" method="post">
         <div class="inline three fields">
           <div class="field">
             <label>周数</label>
-            <select class="ui selection dropdown">
-              <option>请选择</option>
-              <option>第一周</option>
-              <option>第二周</option>
-              <option>第三周</option>
+            <select name="week" class="ui selection dropdown">
+              <option value="0">请选择</option>
+              <option value="1">第一周</option>
+              <option value="2">第二周</option>
+              <option value="3">第三周</option>
+              <option value="4">第四周</option>
+              <option value="5">第五周</option>
+              <option value="6">第六周</option>
+              <option value="7">第七周</option>
+              <option value="8">第八周</option>
+              <option value="9">第九周</option>
+              <option value="10">第十周</option>
+              <option value="11">第十一周</option>
+              <option value="12">第十二周</option>
+              <option value="13">第十三周</option>
+              <option value="14">第十四周</option>
+              <option value="15">第十五周</option>
+              <option value="16">第十六周</option>
+              <option value="17">第十七周</option>
+              <option value="18">第十八周</option>
             </select>
           </div>
           <div class="field">
             <label>星期</label>
-            <select class="ui selection dropdown">
-              <option>请选择</option>
-              <option>第一周</option>
-              <option>第二周</option>
-              <option>第三周</option>
+            <select name="day" class="ui selection dropdown">
+              <option value="0">请选择</option>
+              <option value="1">星期一</option>
+              <option value="2">星期二</option>
+              <option value="3">星期三</option>
+              <option value="4">星期四</option>
+              <option value="5">星期五</option>
+              <option value="6">星期六</option>
+              <option value="7">星期日</option>
             </select>
           </div>
           <div class="field">
-            <label>周数</label>
-            <select class="ui selection dropdown">
-              <option>请选择</option>
-              <option>第一周</option>
-              <option>第二周</option>
-              <option>第三周</option>
+            <label>课时</label>
+            <select name="n" class="ui selection dropdown">
+              <option value="0">请选择</option>
+              <option value="1">第一小节</option>
+              <option value="2">第二小节</option>
+              <option value="3">第三小节</option>
+              <option value="4">第四小节</option>
+              <option value="5">第五小节</option>
+              <option value="6">第六小节</option>
+              <option value="7">第七小节</option>
+              <option value="8">第八小节</option>
+              <option value="9">第九小节</option>
+              <option value="10">第十小节</option>
+              <option value="11">第十一小节</option>
+              <option value="12">第十二小节</option>
             </select>
           </div>
+        </div>
+        <div class="field">
+          <button class="ui blue button">提交</button>
         </div>
       </form>
     </div>
   </div>
 
   <div class="ui text center aligned container" style="margin-top: 1em">
-    <h1 th:text="${title}">当前可自习的教室有</h1>
+    <h1 th:text="${classmessage.currentTime}">当前可自习的教室有</h1>
   </div>
 
   <div class="ui text container">
