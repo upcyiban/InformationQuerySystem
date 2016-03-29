@@ -48,7 +48,7 @@ public class LoginService {
     }
 
     /**
-     * 完成对解密后的json数据的解析,存在session里
+     * 完成对解密后的json数据的解析,存在session里.解析失败则是未授权用户,引导其至授权界面.
      * @param str
      */
     public boolean saveSession(String str){
