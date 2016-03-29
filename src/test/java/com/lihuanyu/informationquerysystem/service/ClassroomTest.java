@@ -25,7 +25,7 @@ public class ClassroomTest {
     @Test
     public void testClassroom(){
         ClassroomMessage classroomMessage = availableClassroomService.processMessage(testMessage);
-        System.out.println(classroomMessage.getDhLists());
+        System.out.println(classroomMessage.dhLists);
     }
 
 }
