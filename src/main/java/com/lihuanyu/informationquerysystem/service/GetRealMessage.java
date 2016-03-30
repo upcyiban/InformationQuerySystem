@@ -24,8 +24,8 @@ public class GetRealMessage {
     @Autowired
     private HttpSession httpSession;
 
-    public String getMessage(String access_token) throws IOException {
-        String url = "https://openapi.yiban.cn/user/real_me";
+    public String getMessage(String access_token, String apiName) throws IOException {
+        String url = "https://openapi.yiban.cn/user/" + apiName;
         String charset = "UTF-8";  // Or in Java 7 and later, use the constant: java.nio.charset.StandardCharsets.UTF_8.name()
 
         String query = String.format("access_token=%s",
