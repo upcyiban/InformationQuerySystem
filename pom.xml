@@ -5,11 +5,11 @@
 
 	<groupId>com.lihuanyu.informationquerysystem</groupId>
 	<artifactId>informationquerysystem</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>informationquerysystem</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Query information what student need</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

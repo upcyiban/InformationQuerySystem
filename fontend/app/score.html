@@ -83,21 +83,20 @@
   </div>
 
   <div class="ui text container">
-    <table class="ui celled table">
+    <table class="ui celled table" style="margin-top: 40px;margin-bottom: 40px">
       <thead>
-      <tr><th colspan="2"><h2>2013-2014-1学期</h2></th></tr>
+      <tr>
+        <th>学期</th>
+        <th>课程名</th>
+        <th>成绩</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>课程名</td>
-          <td>分数</td>
-        </tr><tr>
-          <td>课程名</td>
-          <td>分数</td>
-        </tr><tr>
-          <td>课程名</td>
-          <td>分数</td>
-        </tr>
+      <tr th:each="score:${scoreList}">
+        <td th:text="${score.XQM}">学期</td>
+        <td th:text="${score.KCMC}">课程名</td>
+        <td th:text="${score.KCCJ}">分数</td>
+      </tr>
       </tbody>
     </table>
   </div>
