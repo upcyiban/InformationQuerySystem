@@ -36,7 +36,7 @@
 <!--Following Menu-->
 <div class="ui large top fixed menu transition hidden">
   <div class="ui container">
-    <a class="item">自习室</a>
+    <a class="item" href="/">自习室</a>
     <a class="item active">查成绩</a>
     <a class="item">查课表</a>
   </div>
@@ -44,7 +44,7 @@
 
 <!--Sidebar Menu-->
 <nav class="ui vertical inverted sidebar menu top">
-  <a class="item">自习室</a>
+  <a class="item" href="/">自习室</a>
   <a class="item active">查成绩</a>
   <a class="item">查课表</a>
 </nav>
@@ -63,7 +63,7 @@
           <a class="toc item">
             <i class="sidebar icon"></i>
           </a>
-          <a class="item">自习室</a>
+          <a class="item" href="/">自习室</a>
           <a class="item active">查成绩</a>
           <a class="item">查课表</a>
         </div>
@@ -78,11 +78,29 @@
   </div>
 
 
-  <div class="ui text center aligned container" style="margin-top: 1em">
-    <h1 th:text="${title}">开发中,敬请期待</h1>
+  <div th:if="${result}!=null" class="ui text center aligned container" style="margin-top: 1em">
+    <h2 th:text="${title}">未查询到成绩,是否未通过实名认证或学号有误,请联系中国石油大学(华东)易班发展中心</h2>
   </div>
 
-
+  <div class="ui text container">
+    <table class="ui celled table">
+      <thead>
+      <tr><th colspan="2"><h2>2013-2014-1学期</h2></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>课程名</td>
+          <td>分数</td>
+        </tr><tr>
+          <td>课程名</td>
+          <td>分数</td>
+        </tr><tr>
+          <td>课程名</td>
+          <td>分数</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 </div>
 
