@@ -42,7 +42,7 @@ public class LoginService {
             VerifyUserInfo verifyUserInfo = gson.fromJson(message, VerifyUserInfo.class);
             if (verifyUserInfo.status.equals("success")) {
                 httpSession.setAttribute("realname", verifyUserInfo.info.yb_realname);
-                httpSession.setAttribute("studentid", verifyUserInfo.info.yb_schoolid);
+                httpSession.setAttribute("studentid", verifyUserInfo.info.yb_studentid);
                 return true;
             }else {
                 return false;
