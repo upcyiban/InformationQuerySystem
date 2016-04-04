@@ -78,12 +78,19 @@
   </div>
 
 
-  <div th:if="${result}!=null" class="ui text center aligned container" style="margin-top: 1em">
-    <h2 th:text="${title}">未查询到成绩,是否未通过实名认证或学号有误,请联系中国石油大学(华东)易班发展中心</h2>
+  <div class="ui text center aligned container" style="margin-top: 1em">
+    <div class="ui grid">
+      <div class="eight wide column">
+        <p><span th:text="${studentname}">测试名</span>同学</p>
+      </div>
+      <div class="eight wide column">
+        <p>学号为:<span th:text="${studentid}">学号</span></p>
+      </div>
+    </div>
   </div>
 
   <div class="ui text container">
-    <table class="ui celled table" style="margin-top: 40px;margin-bottom: 40px">
+    <table class="ui celled table" style="margin-top:20px;margin-bottom: 40px">
       <thead>
       <tr>
         <th>学期</th>
