@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by skyADMIN on 16/3/30.
@@ -34,7 +33,6 @@ public class GetScore {
      */
     public String getSorceFromWebservice() {
         String studentid = (String) httpSession.getAttribute("studentid");
-        //System.out.println(studentid);
         return queryUtil.findStudentScore(studentid);
     }
 
@@ -49,6 +47,19 @@ public class GetScore {
 //
 //            }
 //        }
+
+        scoreList = removeDuplicteScoreMessage(scoreList);
+
         model.addAttribute("scoreList",scoreList);
+        String studentid = (String) httpSession.getAttribute("studentid");
+        String realname = (String) httpSession.getAttribute("realname");
+        model.addAttribute("studentid",studentid);
+        model.addAttribute("studentname",realname);
+    }
+
+    public ArrayList<ScoreJsonInfo.ScoreInfo> removeDuplicteScoreMessage(ArrayList<ScoreJsonInfo.ScoreInfo> scoreInfo){
+        LinkedHashSet<ScoreJsonInfo.ScoreInfo> s= new LinkedHashSet<ScoreJsonInfo.ScoreInfo>(scoreInfo);
+        //s.addAll(scoreInfo);
+        return new ArrayList<ScoreJsonInfo.ScoreInfo>(s);
     }
 }
