@@ -22,4 +22,8 @@ public class SchoolDateTest {
         System.out.println(schoolDateUtil.getWeek());
     }
 
+    @Test
+    public void testGetDay(){
+        System.out.println(schoolDateUtil.getDay());
+    }
 }
