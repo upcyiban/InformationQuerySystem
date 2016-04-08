@@ -1,6 +1,7 @@
 package com.lihuanyu.informationquerysystem.util;
 
 import com.lihuanyu.informationquerysystem.InformationquerysystemApplication;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -14,6 +15,11 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @WebAppConfiguration
 public class SchoolDateTest {
 
+    SchoolDateUtil schoolDateUtil = new SchoolDateUtil();
 
+    @Test
+    public void testGetWeek(){
+        System.out.println(schoolDateUtil.getWeek());
+    }
 
 }
