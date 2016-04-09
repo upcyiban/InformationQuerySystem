@@ -36,16 +36,16 @@
 <!--Following Menu-->
 <div class="ui large top fixed menu transition hidden">
   <div class="ui container">
-    <a class="item">自习室</a>
-    <a class="item">查成绩</a>
-    <a class="item">查课表</a>
+    <a class="item" href="/">自习室</a>
+    <a class="item" href="/score">查成绩</a>
+    <a class="item active">查课表</a>
   </div>
 </div>
 
 <!--Sidebar Menu-->
 <nav class="ui vertical inverted sidebar menu top">
-  <a class="item">自习室</a>
-  <a class="item">查成绩</a>
+  <a class="item" href="/">自习室</a>
+  <a class="item" href="/score">查成绩</a>
   <a class="item active">查课表</a>
 </nav>
 
@@ -63,8 +63,8 @@
           <a class="toc item">
             <i class="sidebar icon"></i>
           </a>
-          <a class="item">自习室</a>
-          <a class="item">查成绩</a>
+          <a class="item" href="/">自习室</a>
+          <a class="item" href="/score">查成绩</a>
           <a class="item active">查课表</a>
         </div>
       </div>
@@ -78,11 +78,24 @@
   </div>
 
   <div class="ui text center aligned container" style="margin-top: 1em">
-    <h1 th:text="${title}">开发中,敬请期待</h1>
-  </div>
+    <h1>今日课表</h1>
+    <div class="ui inverted segment">
+      <div class="ui inverted relaxed divided list">
 
-  <div class="ui text container">
+        <h1 th:if="${meike}!=null">哈哈,今天你没课哎!</h1>
 
+        <div class="item" th:each="classSchedule:${classSchedules}">
+          <div class="content">
+            <h2 class="header" th:text="${classSchedule.coursesName}">课程名称</h2>
+            <p>
+              <span th:text="${classSchedule.coursesLocation}">东环201</span><br/>
+              <span th:text="${classSchedule.coursesTime}">第0304节</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
 </div>
