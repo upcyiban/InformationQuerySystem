@@ -28,7 +28,7 @@ public class ClassScheduleTest {
     @Test
     public void testGetMessage(){
         ArrayList<ClassScheduleInfo.ClassInfo> message = getClassSchedule.getMessage(testMessage1);
-        message = getClassSchedule.removeDuplicteScoreMessage(message);
+        message = getClassSchedule.removeDuplicteCoursesMessage(message);
         for (int i = 0; i < message.size(); i++){
             System.out.println(message.get(i).KCMC + "  " + message.get(i).SKSJ + "  " + message.get(i).SKZCMX);
         }
@@ -37,7 +37,7 @@ public class ClassScheduleTest {
     @Test
     public void testTidyMessage(){
         ArrayList<ClassScheduleInfo.ClassInfo> message = getClassSchedule.getMessage(testMessage1);
-        message = getClassSchedule.removeDuplicteScoreMessage(message);
+        message = getClassSchedule.removeDuplicteCoursesMessage(message);
         ArrayList<ClassSchedule> classSchedules = getClassSchedule.tidyMessage(message);
         for (int i = 0; i < classSchedules.size(); i++) {
             System.out.println(classSchedules.get(i).coursesName);
