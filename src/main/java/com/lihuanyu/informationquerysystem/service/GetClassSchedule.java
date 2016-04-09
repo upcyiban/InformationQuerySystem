@@ -7,6 +7,7 @@ import com.lihuanyu.informationquerysystem.util.QueryUtil;
 import com.lihuanyu.informationquerysystem.util.SchoolDateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -24,6 +25,17 @@ public class GetClassSchedule {
     @Autowired
     private HttpSession httpSession;
 
+    public void showView(Model model, ArrayList<ClassScheduleInfo.ClassInfo> classInfos) {
+        classInfos = removeDuplicteCoursesMessage(classInfos);
+        ArrayList<ClassSchedule> classSchedules = tidyMessage(classInfos);
+        model.addAttribute("classSchedules",classSchedules);
+    }
+
+    /**
+     * 整理对象成需要的模型对象.
+     * @param coursesInfo
+     * @return
+     */
     public ArrayList<ClassSchedule> tidyMessage(ArrayList<ClassScheduleInfo.ClassInfo> coursesInfo) {
         int week = schoolDateUtil.getWeek();
         int day = schoolDateUtil.getDay();
@@ -47,7 +59,7 @@ public class GetClassSchedule {
         return classSchedules;
     }
 
-    public ArrayList<ClassScheduleInfo.ClassInfo> removeDuplicteScoreMessage(ArrayList<ClassScheduleInfo.ClassInfo> classInfos) {
+    public ArrayList<ClassScheduleInfo.ClassInfo> removeDuplicteCoursesMessage(ArrayList<ClassScheduleInfo.ClassInfo> classInfos) {
         LinkedHashSet<ClassScheduleInfo.ClassInfo> s = new LinkedHashSet<ClassScheduleInfo.ClassInfo>(classInfos);
         return new ArrayList<ClassScheduleInfo.ClassInfo>(s);
     }
