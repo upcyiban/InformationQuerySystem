@@ -2,6 +2,7 @@ package com.lihuanyu.informationquerysystem.service;
 
 import com.lihuanyu.informationquerysystem.GsonTemplate.ClassScheduleInfo;
 import com.lihuanyu.informationquerysystem.InformationquerysystemApplication;
+import com.lihuanyu.informationquerysystem.model.ClassSchedule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,17 @@ public class ClassScheduleTest {
         ArrayList<ClassScheduleInfo.ClassInfo> message = getClassSchedule.getMessage(testMessage1);
         message = getClassSchedule.removeDuplicteScoreMessage(message);
         for (int i = 0; i < message.size(); i++){
-            System.out.println(message.get(i).KCMC);
+            System.out.println(message.get(i).KCMC + "  " + message.get(i).SKSJ + "  " + message.get(i).SKZCMX);
+        }
+    }
+
+    @Test
+    public void testTidyMessage(){
+        ArrayList<ClassScheduleInfo.ClassInfo> message = getClassSchedule.getMessage(testMessage1);
+        message = getClassSchedule.removeDuplicteScoreMessage(message);
+        ArrayList<ClassSchedule> classSchedules = getClassSchedule.tidyMessage(message);
+        for (int i = 0; i < classSchedules.size(); i++) {
+            System.out.println(classSchedules.get(i).coursesName);
         }
     }
 
