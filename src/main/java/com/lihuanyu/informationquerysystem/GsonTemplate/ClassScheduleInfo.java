@@ -28,7 +28,7 @@ public class ClassScheduleInfo {
 
         @Override
         public boolean equals(Object obj) {
-            return KCMC.equals(((ClassInfo)obj).KCMC) && SKSJ.equals(((ClassInfo)obj).SKSJ);
+            return KCMC.equals(((ClassInfo)obj).KCMC) && SKSJ.equals(((ClassInfo)obj).SKSJ) && SKZCMX.equals(((ClassInfo)obj).SKZCMX);
         }
 
         @Override
