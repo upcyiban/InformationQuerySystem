@@ -37,18 +37,18 @@
 <div class="ui large top fixed menu transition hidden">
   <div class="ui container">
     <a class="item" href="/">自习室</a>
-    <a class="item active">查成绩</a>
+    <a class="item" href="/score">查成绩</a>
     <a class="item" href="/schedule">查课表</a>
-    <a class="item" href="/about">关于</a>
+    <a class="item">关于</a>
   </div>
 </div>
 
 <!--Sidebar Menu-->
-<nav class="ui vertical inverted sidebar menu top">
+<nav class="ui vertical inverted sidebar menu top" style="font-size: large">
   <a class="item" href="/">自习室</a>
-  <a class="item active">查成绩</a>
+  <a class="item" href="/score">查成绩</a>
   <a class="item" href="/schedule">查课表</a>
-  <a class="item" href="/about">关于</a>
+  <a class="item">关于</a>
 </nav>
 
 <div class="pusher">
@@ -66,49 +66,28 @@
             <i class="sidebar icon"></i>
           </a>
           <a class="item" href="/">自习室</a>
-          <a class="item active">查成绩</a>
+          <a class="item" href="/score">查成绩</a>
           <a class="item" href="/schedule">查课表</a>
-          <a class="item" href="/about">关于</a>
+          <a class="item active">关于</a>
         </div>
       </div>
     </div>
 
     <div class="ui text container">
-      <h2 class="ui inverted header">成绩查询</h2>
+      <h2 class="ui inverted header">关于本应用</h2>
       <h3>官方接口,更准更快.优化显示,更易查看.</h3>
     </div>
 
   </div>
 
-
-  <div class="ui text center aligned container" style="margin-top: 1em">
-    <div class="ui grid">
-      <div class="eight wide column">
-        <p><span th:text="${studentname}">测试名</span>同学</p>
-      </div>
-      <div class="eight wide column">
-        <p>学号为:<span th:text="${studentid}">学号</span></p>
-      </div>
+  <div class="ui text left aligned container" style="margin-top: 1em">
+    <div class="ui segment">
+      <p>石大易查询是由网络中心提供接口，石大易班发展中心技术部进行二次开发，为学生提供：空教室查询、成绩查询和课表查询的轻应用。</p>
+      <p>项目开源地址：<a href="https://github.com/upcyiban/InformationQuerySystem">Github地址</a></p>
+      <p>问题反馈及更多信息:</p>
+      <p><a href="http://yb.upc.edu.cn/blog/?p=9">应用说明:石大易查询 - 技术部的博客</a></p>
+      <p><a href="http://yb.upc.edu.cn/blog/">技术部的博客</a></p>
     </div>
-  </div>
-
-  <div class="ui text container">
-    <table class="ui celled table" style="margin-top:20px;margin-bottom: 40px">
-      <thead>
-      <tr>
-        <th>学期</th>
-        <th>课程名</th>
-        <th>成绩</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="score:${scoreList}">
-        <td th:text="${score.XQM}">学期</td>
-        <td th:text="${score.KCMC}">课程名</td>
-        <td th:text="${score.KCCJ}">分数</td>
-      </tr>
-      </tbody>
-    </table>
   </div>
 
 </div>
