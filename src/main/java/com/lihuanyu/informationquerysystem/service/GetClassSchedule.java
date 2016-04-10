@@ -11,7 +11,9 @@ import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.LinkedHashSet;
+import java.util.TreeSet;
 
 /**
  * Created by skyADMIN on 16/4/8.
@@ -39,14 +41,18 @@ public class GetClassSchedule {
     public ArrayList<ClassSchedule> tidyMessage(ArrayList<ClassScheduleInfo.ClassInfo> coursesInfo) {
         int week = schoolDateUtil.getWeek();
         int day = schoolDateUtil.getDay();
-        ArrayList<ClassSchedule> classSchedules = new ArrayList<ClassSchedule>();
-        for (int i = 0; i < coursesInfo.size(); i++) {
-            ClassScheduleInfo.ClassInfo temp = coursesInfo.get(i);
+        TreeSet<ClassSchedule> classSchedules = new TreeSet<ClassSchedule>(new Comparator<ClassSchedule>() {
+            @Override
+            public int compare(ClassSchedule o1, ClassSchedule o2) {
+                return o1.coursesTime.compareTo(o2.coursesTime);
+            }
+        });
+        for (ClassScheduleInfo.ClassInfo temp : coursesInfo) {
             String[] skzc = temp.SKZCMX.split(",");
             for (int j = 1; j < skzc.length; j++) {
                 if (Integer.parseInt(skzc[j]) == week) {
-                    int tempDay = Integer.parseInt(temp.SKSJ.substring(0,1));
-                    if (tempDay == day){
+                    int tempDay = Integer.parseInt(temp.SKSJ.substring(0, 1));
+                    if (tempDay == day) {
                         ClassSchedule classSchedule = new ClassSchedule();
                         classSchedule.coursesLocation = temp.JXDD;
                         classSchedule.coursesTime = temp.SKSJ.substring(1);
@@ -56,7 +62,7 @@ public class GetClassSchedule {
                 }
             }
         }
-        return classSchedules;
+        return new ArrayList<ClassSchedule>(classSchedules);
     }
 
     public ArrayList<ClassScheduleInfo.ClassInfo> removeDuplicteCoursesMessage(ArrayList<ClassScheduleInfo.ClassInfo> classInfos) {

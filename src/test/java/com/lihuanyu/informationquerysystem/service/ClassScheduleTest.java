@@ -40,7 +40,7 @@ public class ClassScheduleTest {
         message = getClassSchedule.removeDuplicteCoursesMessage(message);
         ArrayList<ClassSchedule> classSchedules = getClassSchedule.tidyMessage(message);
         for (int i = 0; i < classSchedules.size(); i++) {
-            System.out.println(classSchedules.get(i).coursesName);
+            System.out.println(classSchedules.get(i).coursesName + " " + classSchedules.get(i).coursesTime + " " + classSchedules.get(i).coursesLocation);
         }
     }
 
