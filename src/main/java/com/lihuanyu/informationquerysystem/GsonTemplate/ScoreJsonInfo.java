@@ -24,10 +24,6 @@ public class ScoreJsonInfo {
 
         @Override
         public boolean equals(Object obj) {
-//            if (KCMC.equals(((ScoreInfo)obj).KCMC) && KCCJ == ((ScoreInfo) obj).KCCJ)
-//                return true;
-//            else
-//                return false;
             return KCMC.equals(((ScoreInfo)obj).KCMC);
         }
 

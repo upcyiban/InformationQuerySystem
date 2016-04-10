@@ -59,7 +59,6 @@ public class GetScore {
 
     public ArrayList<ScoreJsonInfo.ScoreInfo> removeDuplicteScoreMessage(ArrayList<ScoreJsonInfo.ScoreInfo> scoreInfo){
         LinkedHashSet<ScoreJsonInfo.ScoreInfo> s= new LinkedHashSet<ScoreJsonInfo.ScoreInfo>(scoreInfo);
-        //s.addAll(scoreInfo);
         return new ArrayList<ScoreJsonInfo.ScoreInfo>(s);
     }
 }
