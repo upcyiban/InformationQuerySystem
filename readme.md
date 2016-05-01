@@ -34,3 +34,6 @@ gsontemplate包里是用gson解析json需要的模板类.
 前端使用semantic-ui作为框架,写了最基本的架子.
 
 前端续开发流程:拉取仓库到本地,cd进入fontend目录,npm install,bower install,gulp server.
+
+## 维护说明
+项目维护分接口维护和程序逻辑维护.交接时会给配置类.接口维护主要在接口变化时和学校网络中心老师交涉.此外简单的维护包括对SchoolDateUtil类的修改,计算周数需要修改学期的开始时间.
