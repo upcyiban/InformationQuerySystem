@@ -58,10 +58,7 @@ public class LoginService {
      * @return
      */
     public boolean isAuthReal() {
-        if (httpSession.getAttribute("yb_studentid") != null)
-            return true;
-        else
-            return false;
+        return httpSession.getAttribute("yb_studentid") != null;
     }
 
     public ModelAndView toYibanAuth() {
@@ -74,11 +71,7 @@ public class LoginService {
      * @return
      */
     public boolean isLogin() {
-        if (httpSession.getAttribute("userid") != null) {
-            return true;
-        } else {
-            return false;
-        }
+        return httpSession.getAttribute("userid") != null;
     }
 
     /**
@@ -102,7 +95,7 @@ public class LoginService {
      *
      * @param str
      */
-    public boolean saveSession(String str) {
+    private boolean saveSession(String str) {
         Gson gson = new Gson();
         try {
             SessionUser sessionUser = gson.fromJson(str, SessionUser.class);
