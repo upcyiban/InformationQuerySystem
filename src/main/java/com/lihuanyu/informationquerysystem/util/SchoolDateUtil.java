@@ -21,7 +21,7 @@ public class SchoolDateUtil {
         long begin = 0;
         try {
             SimpleDateFormat beginTime = new SimpleDateFormat("yyyy-MM-dd");
-            begin = beginTime.parse("2016-02-28").getTime();
+            begin = beginTime.parse("2016-09-4").getTime();
             time = current - begin;
         }catch (ParseException e){
             e.printStackTrace();
