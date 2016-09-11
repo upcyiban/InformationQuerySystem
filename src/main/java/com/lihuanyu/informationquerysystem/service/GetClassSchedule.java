@@ -2,6 +2,7 @@ package com.lihuanyu.informationquerysystem.service;
 
 import com.google.gson.Gson;
 import com.lihuanyu.informationquerysystem.GsonTemplate.ClassScheduleInfo;
+import com.lihuanyu.informationquerysystem.config.Config;
 import com.lihuanyu.informationquerysystem.model.ClassSchedule;
 import com.lihuanyu.informationquerysystem.util.QueryUtil;
 import com.lihuanyu.informationquerysystem.util.SchoolDateUtil;
@@ -27,6 +28,9 @@ public class GetClassSchedule {
     @Autowired
     private HttpSession httpSession;
 
+    @Autowired
+    private Config config;
+
     public void showView(Model model, ArrayList<ClassScheduleInfo.ClassInfo> classInfos) {
         classInfos = removeDuplicteCoursesMessage(classInfos);
         ArrayList<ClassSchedule> classSchedules = tidyMessage(classInfos);
@@ -39,8 +43,8 @@ public class GetClassSchedule {
      * @return
      */
     public ArrayList<ClassSchedule> tidyMessage(ArrayList<ClassScheduleInfo.ClassInfo> coursesInfo) {
-        int week = schoolDateUtil.getWeek();
-        int day = schoolDateUtil.getDay();
+        int week = schoolDateUtil.getWeek(config);
+        int day = schoolDateUtil.getDay(config);
         TreeSet<ClassSchedule> classSchedules = new TreeSet<ClassSchedule>(new Comparator<ClassSchedule>() {
             @Override
             public int compare(ClassSchedule o1, ClassSchedule o2) {

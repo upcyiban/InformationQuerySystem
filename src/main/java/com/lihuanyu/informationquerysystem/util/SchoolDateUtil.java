@@ -17,8 +17,7 @@ public class SchoolDateUtil {
         return current;
     }
 
-    private double getTime(){
-        Config config = new Config();
+    private double getTime(Config config){
         long current = getCurrentTime();
         double time = 0;
         long begin = 0;
@@ -32,16 +31,16 @@ public class SchoolDateUtil {
         return time;
     }
 
-    public int getWeek(){
+    public int getWeek(Config config){
         int week = 0;
-        double days = Math.ceil(getTime()/86400000.0);
+        double days = Math.ceil(getTime(config)/86400000.0);
         week = (int) Math.ceil(days/7);//第几周
         return week;
     }
 
-    public int getDay(){
+    public int getDay(Config config){
         int day = 0;
-        double days = Math.ceil(getTime()/86400000.0);
+        double days = Math.ceil(getTime(config)/86400000.0);
         switch ((int)Math.ceil(days)%7){
             case 0: day = 6;break;
             case 1: day = 7;break;
