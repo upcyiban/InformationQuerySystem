@@ -2,4 +2,11 @@ spring:
   thymeleaf:
     mode: LEGACYHTML5
 server:
-  port: 8081
+  port: 8082
+yibanoauth:
+  informationquerysystem:
+    APPID: "d7c60a12d66add18"
+    APPkey: "e44c2a54b1ecef13fb72f1dd631f2c86"
+    redirect: "http://f.yiban.cn/iapp25685"
+app:
+  data: "2016-09-04"

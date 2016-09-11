@@ -25,6 +25,8 @@ public class IndexController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET, params = "verify_request")
     public String processAuth(String verify_request) throws Exception {
+        System.out.println("do auth");
+        System.out.println(verify_request);
         return loginService.processAuth(verify_request);
     }
 

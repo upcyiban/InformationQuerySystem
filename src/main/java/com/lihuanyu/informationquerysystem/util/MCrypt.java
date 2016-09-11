@@ -3,7 +3,8 @@
  */
 package com.lihuanyu.informationquerysystem.util;
 
-import com.lihuanyu.informationquerysystem.config.ProductConfig;
+import com.lihuanyu.informationquerysystem.config.Config;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.crypto.Cipher;
 import javax.crypto.NoSuchPaddingException;
@@ -15,15 +16,18 @@ public class MCrypt {
 
     static char[] HEX_CHARS = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
 
-    private String iv = ProductConfig.client_id;//Dummy iv (CHANGE IT!)
+    private String iv;//Dummy iv (CHANGE IT!)
     private IvParameterSpec ivspec;
     private SecretKeySpec keyspec;
     private Cipher cipher;
 
-    private String SecretKey = ProductConfig.AppSecret;//Dummy secretKey (CHANGE IT!)
+    private String SecretKey;//Dummy secretKey (CHANGE IT!)
 
-    public MCrypt()
-    {
+    public MCrypt(Config config) {
+
+        this.iv = config.appid;
+        this.SecretKey = config.appkey;
+
         ivspec = new IvParameterSpec(iv.getBytes());
 
         keyspec = new SecretKeySpec(SecretKey.getBytes(), "AES");

@@ -1,5 +1,7 @@
 package com.lihuanyu.informationquerysystem.util;
 
+import com.lihuanyu.informationquerysystem.config.Config;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,12 +18,13 @@ public class SchoolDateUtil {
     }
 
     private double getTime(){
+        Config config = new Config();
         long current = getCurrentTime();
         double time = 0;
         long begin = 0;
         try {
             SimpleDateFormat beginTime = new SimpleDateFormat("yyyy-MM-dd");
-            begin = beginTime.parse("2016-09-4").getTime();
+            begin = beginTime.parse(config.data).getTime();
             time = current - begin;
         }catch (ParseException e){
             e.printStackTrace();

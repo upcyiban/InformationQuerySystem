@@ -3,7 +3,7 @@ package com.lihuanyu.informationquerysystem.service;
 import com.google.gson.Gson;
 import com.lihuanyu.informationquerysystem.GsonTemplate.SessionUser;
 import com.lihuanyu.informationquerysystem.GsonTemplate.VerifyUserInfo;
-import com.lihuanyu.informationquerysystem.config.ProductConfig;
+import com.lihuanyu.informationquerysystem.config.Config;
 import com.lihuanyu.informationquerysystem.util.MCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +23,9 @@ public class LoginService {
 
     @Autowired
     private GetRealMessage getRealMessage;
+
+    @Autowired
+    private Config config;
 
     public boolean procssAuthReal() throws IOException {
         String access_token = (String) httpSession.getAttribute("access_token");
@@ -62,7 +65,7 @@ public class LoginService {
     }
 
     public ModelAndView toYibanAuth() {
-        return new ModelAndView("redirect:https://openapi.yiban.cn/oauth/authorize?client_id=" + ProductConfig.client_id + "&redirect_uri=" + ProductConfig.redirect_uri);
+        return new ModelAndView("redirect:https://openapi.yiban.cn/oauth/authorize?client_id=" + config.appid + "&redirect_uri=" + config.redirect_uri);
     }
 
     /**
@@ -81,7 +84,9 @@ public class LoginService {
      * @throws Exception
      */
     public String processAuth(String verify_request) throws Exception {
-        MCrypt mCrypt = new MCrypt();
+        System.out.println(verify_request);
+        MCrypt mCrypt = new MCrypt(config);
+        System.out.println(verify_request);
         String res = new String(mCrypt.decrypt(verify_request));
         if (saveSession(res)) {
             return "redirect:/";
@@ -96,6 +101,7 @@ public class LoginService {
      * @param str
      */
     private boolean saveSession(String str) {
+        System.out.println("save session");
         Gson gson = new Gson();
         try {
             SessionUser sessionUser = gson.fromJson(str, SessionUser.class);
