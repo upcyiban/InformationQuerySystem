@@ -45,12 +45,4 @@ public class GetScoreTest {
         System.out.println(scoreInfo.KCMC);
     }
 
-    @Test
-    public void testShowScore(){
-        ArrayList<ScoreJsonInfo.ScoreInfo> scoreInfos =  getScore.getScoreList(testMessage3);
-        scoreInfos = getScore.removeDuplicteScoreMessage(scoreInfos);
-        for (int i = 0; i < scoreInfos.size(); i++){
-            System.out.println(scoreInfos.get(i).KCMC + " " + scoreInfos.get(i).KCCJ);
-        }
-    }
 }
