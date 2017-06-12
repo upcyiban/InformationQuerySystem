@@ -12,10 +12,6 @@
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="../bower_components/semantic/dist/semantic.css">
-  <link rel="stylesheet" href="../bower_components/semantic/dist/components/sidebar.css">
-  <link rel="stylesheet" href="../bower_components/semantic/dist/components/segment.css">
-  <!--<link rel="stylesheet" href="../bower_components/semantic/dist/components/icon.css">-->
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -103,9 +99,9 @@
       </thead>
       <tbody>
       <tr th:each="score:${scoreList}">
-        <td th:text="${score.XQM}">学期</td>
+        <td th:text="${score.XNXQM}">学期</td>
         <td th:text="${score.KCMC}">课程名</td>
-        <td th:text="${score.KCCJ}">分数</td>
+        <td th:text="${score.ZCJ}">分数</td>
       </tr>
       </tbody>
     </table>
@@ -133,10 +129,7 @@
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <script src="/bower_components/jquery/dist/jquery.js"></script>
-<script src="../bower_components/semantic/dist/semantic.js"></script>
-<script src="../bower_components/semantic/dist/components/sidebar.js"></script>
-<script src="../bower_components/semantic/dist/components/transition.js"></script>
-<script src="../bower_components/semantic/dist/components/visibility.js"></script>
+<script src="/bower_components/semantic/dist/semantic.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
