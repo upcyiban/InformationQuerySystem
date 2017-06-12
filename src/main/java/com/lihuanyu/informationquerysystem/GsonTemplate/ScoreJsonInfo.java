@@ -43,7 +43,7 @@ public class ScoreJsonInfo {
         public int hashCode() {
             final int PRIME = 31;
             int result = 1;
-            result = (PRIME * result) + Integer.valueOf(ZCJ);
+            result = (PRIME * result) + ZCJ.hashCode();
             return result;
         }
 
